@@ -1,0 +1,16 @@
+{
+  "name": "bitcoinbalance",
+  "version": "1.0.0",
+  "description": "Get Transactions from bitcoin xpub key.",
+  "main": "index.js",
+  "scripts": {
+    "export": "node ./index.js",
+  },
+  "author": "Thorsten Krug",
+  "license": "GPL-2.0",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "dateformat": "^3.0.3",
+    "json-csv": "^2.0.3"
+  }
+}
