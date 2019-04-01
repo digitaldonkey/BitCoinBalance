@@ -4,19 +4,19 @@ const fs = require('fs');
 const dateFormat = require('dateformat');
 
 // See: https://bitcoin.stackexchange.com/a/64685
-const API_URL = ' https://blockchain.info/multiaddr?active='
+const API_URL = ' https://blockchain.info/multiaddr?active=';
 
-const EXCHANGE = 'Ledger BTC'
-const TRADE_GROUP = ''
+const EXCHANGE = 'Ledger BTC';
+const TRADE_GROUP = '';
 
 // Import is dependent on your cointracking language settings.
 // This script can only turn 'Deposit' and 'Withdrawal' into cointracking imports.
 const DEPOSIT = 'Einzahlung';
-const WITHDRAWL = 'Auszahlung'
+const WITHDRAWL = 'Auszahlung';
 
 // Date is also language dependent
 // See: https://www.npmjs.com/package/dateformat#mask-options
-const DATE_FORMAT = 'dd-mm-yyyy HH:MM:ss'
+const DATE_FORMAT = 'dd-mm-yyyy HH:MM:ss';
 
 const parseOptions = {
   fields: [

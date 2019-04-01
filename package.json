@@ -4,7 +4,7 @@
   "description": "Get Transactions from bitcoin xpub key.",
   "main": "index.js",
   "scripts": {
-    "export": "node ./index.js",
+    "export": "node ./index.js"
   },
   "author": "Thorsten Krug",
   "license": "GPL-2.0",
