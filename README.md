@@ -1,4 +1,4 @@
-# TransactionsExport
+# BitCoinBalance
 Exports BTC transactions into Cointracking import file (CSV).
 
 It only suports "Deposit" and "Withdrawal" as it is intended to be used to **track transactions made with a Ledger hardware wallet (e.g: Ledger Nano S.
