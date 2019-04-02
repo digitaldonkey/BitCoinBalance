@@ -14,6 +14,10 @@ const TRADE_GROUP = '';
 const DEPOSIT = 'Einzahlung';
 const WITHDRAWL = 'Auszahlung';
 
+// Number separator
+const NUMBER_SEPARATOR = ',';
+
+
 // Date is also language dependent
 // See: https://www.npmjs.com/package/dateformat#mask-options
 const DATE_FORMAT = 'dd-mm-yyyy HH:MM:ss';
@@ -33,7 +37,7 @@ const parseOptions = {
         label: 'Buy Amount',
          name: 'result',
          filter : function(value) {
-           return value > 0 ? toBtc(value) : null;
+           return value > 0 ? convertNumber(value) : null;
          }
       },
       {
@@ -47,7 +51,7 @@ const parseOptions = {
         label: 'Sell Amount',
         name: 'result',
         filter : function(value) {
-           return value < 0 ?  toBtc(value) * -1 : null;
+           return value < 0 ?  convertNumber(value * -1) : null;
         }
       },
       {
@@ -61,7 +65,7 @@ const parseOptions = {
        label: 'Fee Amount (optional)',
        name: 'fee',
        filter : function(value) {
-         return toBtc(value);
+         return value > 0 ? convertNumber(value) : null;
        }
       },
       {
@@ -190,4 +194,9 @@ function writeFile (content) {
 }
 
 // Helper to convert Satoshi values to BTC.
-function toBtc(val) { return val / 100000000};
+function convertNumber(val) {
+  let number = val / 100000000
+  if (NUMBER_SEPARATOR !== '.') {
+    return number.toString().replace('.', NUMBER_SEPARATOR)
+  }
+};
